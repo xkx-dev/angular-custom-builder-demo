@@ -5,7 +5,7 @@
   "projects": {
     "xkx-ng-esbuild": {
       "projectType": "application",
-      "schematics": {
+    "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
@@ -15,7 +15,7 @@
       "prefix": "app",
       "architect": {
         "build": {
-          "builder": "@xkx/customesbuild:esbuild",
+          "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/xkx-ng-esbuild",
             "index": "src/index.html",
@@ -24,13 +24,16 @@
               "zone.js"
             ],
             "tsConfig": "tsconfig.app.json",
-            "customEsbuildConfig": "C:\\projects\\web-dev\\xkx-ng-esbuild\\src\\config\\esbuild.js",
             "inlineStyleLanguage": "scss",
             "stylePreprocessorOptions": {
               "includePaths": [
                 ""
               ]
             },
+            "allowedCommonJsDependencies": [
+              "loadsh",
+              "path"
+            ],
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -42,18 +45,6 @@
           },
           "configurations": {
             "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
               "outputHashing": "all"
             },
             "development": {
@@ -62,10 +53,14 @@
               "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "buildTarget": "xkx-ng-esbuild:build:development",
+            "forceEsbuild": true
+          },
           "configurations": {
             "production": {
               "buildTarget": "xkx-ng-esbuild:build:production"
@@ -105,6 +100,6 @@
     }
   },
   "cli": {
-    "analytics": "bba68069-27bc-4925-a135-dc065adcb9b4"
+    "analytics": false
   }
 }

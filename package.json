@@ -12,28 +12,46 @@
   "dependencies": {
     "@angular/animations": "^17.0.0",
     "@angular/common": "^17.0.0",
-    "@angular/compiler": "^17.0.0",
+    "@angular/compiler": "^17.1.2",
     "@angular/core": "^17.0.0",
     "@angular/forms": "^17.0.0",
+    "@angular/material": "^16.2.13",
     "@angular/platform-browser": "^17.0.0",
     "@angular/platform-browser-dynamic": "^17.0.0",
     "@angular/router": "^17.0.0",
+    "browserfs": "^1.4.3",
+    "fs": "^0.0.1-security",
+    "jquery": "^3.7.1",
+    "lodash": "^4.17.21",
+    "path": "^0.12.7",
+    "path-browserify": "^1.0.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.10",
-    "@angular/cli": "^17.0.10",
+    "@angular-builders/custom-esbuild": "^17.1.0-beta.0",
+    "@angular-devkit/build-angular": "^17.1.1",
+    "@angular/cli": "^17.1.0",
     "@angular/compiler-cli": "^17.0.0",
     "@types/jasmine": "~5.1.0",
+    "@types/jquery": "^3.5.29",
+    "@types/lodash": "^4.14.202",
+    "@types/node": "12.20.55",
+    "@xkx/custom-esbuild": "file:../custom_esbuild",
+    "esbuild-plugin-svg": "^0.1.0",
+    "i": "^0.3.7",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.2.2",
-    "@xkx/customesbuild": "file:../custom_esbuild"
+    "npm": "^10.4.0",
+    "typescript": "~5.2.2"
+  },
+  "browser": {
+    "fs": "browserfs",
+    "path": "path-browserify"
   }
 }
